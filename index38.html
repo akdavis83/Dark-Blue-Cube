@@ -1,0 +1,37 @@
+<link rel="icon" href="https://fav.farm/🔥" />
+<title>Cube</title>
+<style>
+	html,
+	body {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		background: #222;
+		touch-action: none;
+	}
+</style>
+
+<base href="https://docs.lume.io/" />
+<script src="./importmap.js"></script>
+
+<lume-scene id="scene" perspective="800" webgl>
+	<lume-point-light position="200 -200 200" intensity="0.6" color="white"></lume-point-light>
+	<lume-ambient-light color="white" intensity="0.6"></lume-ambient-light>
+	<lume-camera-rig active distance="700" max-distance="700" min-distance="100"></lume-camera-rig>
+
+	<lume-mesh
+		id="mesh"
+		has="box-geometry phong-material"
+		color="darkblue"
+		rotation="90 0 0"
+		size="100 100 100"
+		mount-point="0.5 0.5 0.5"
+	></lume-mesh>
+</lume-scene>
+
+<script type="module">
+	import 'lume'
+
+	mesh.rotation = (x, y, z) => [++x, ++y, z]
+</script>
